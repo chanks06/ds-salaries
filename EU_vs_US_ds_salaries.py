@@ -34,3 +34,7 @@ us_mean=ds[ds['salary_currency']=='USD']['salary_in_usd'].mean()
 eu_mean=ds[ds['salary_currency']=='EUR']['salary_in_usd'].mean()
 
 print('the mean salary in the US is:',us_mean,'while in the eu it is:',eu_mean)
+
+print('the difference is: (usa-eu)',us_mean-eu_mean)
+
+print('americans make',us_mean/eu_mean,'times more than europeans in this field')
