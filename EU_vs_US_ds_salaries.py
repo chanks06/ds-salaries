@@ -38,3 +38,25 @@ print('the mean salary in the US is:',us_mean,'while in the eu it is:',eu_mean)
 print('the difference is: (usa-eu)',us_mean-eu_mean)
 
 print('americans make',us_mean/eu_mean,'times more than europeans in this field')
+
+#%%
+
+#now we can re arrange this to find the differences between pay in multiple jobs
+ds=df[df['job_title']=='Data Engineer']
+
+
+ds=ds[ds['employment_type']=='FT']
+
+#or experience levels
+ds=ds[ds['experience_level']=='SE']
+
+
+us_mean=ds[ds['salary_currency']=='USD']['salary_in_usd'].mean()
+
+eu_mean=ds[ds['salary_currency']=='EUR']['salary_in_usd'].mean()
+
+print('the mean salary in the US is:',us_mean,'while in the eu it is:',eu_mean,'\n')
+
+print('the difference is: (usa-eu)',us_mean-eu_mean,'USD \n')
+
+print('americans make',us_mean/eu_mean,'times more than europeans in this field')
